@@ -7,6 +7,7 @@ const path = require('path');
 const { cleanDescriptionHtml, cleanProductDescriptionHtml } = require('./sanitize-html');
 const { ensureImgAlt, removeFirstHeading, downgradeH1ToH2 } = require('./content-parser');
 const { localizeInternalLinks, hrefPage, hrefProduct } = require('./internal-links');
+const { searchIcon } = require('./icons');
 
 const SIGNUP_URL = 'https://members.seotoolsgroupbuy.us/signup';
 const PRODUCTS_PAGE_SIZE = 24;
@@ -477,7 +478,10 @@ function renderProductsListing(products, pages) {
 
   <div class="pb-16 relative z-10">
     <div class="container mx-auto px-4">
-      <input type="text" data-products-filter placeholder="Search products..." class="w-full max-w-xl mx-auto block mb-8 px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:border-teal-500 focus:outline-none">
+      <div class="relative max-w-xl mx-auto mb-8">
+        ${searchIcon('lg')}
+        <input type="text" data-products-filter placeholder="Search products..." class="w-full pl-12 pr-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder:text-slate-500 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500">
+      </div>
       <div class="products-grid min-h-[320px]" data-products-grid>
         <div class="col-span-full flex items-center justify-center py-16 text-slate-400" data-products-loading>Loading products...</div>
       </div>

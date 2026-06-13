@@ -2,6 +2,7 @@ const { cleanPageTitle, assetPrefix, SITE_URL } = require('./utils');
 const { hrefHome, hrefPage } = require('./internal-links');
 const { buildSeo, renderSeoTags, escapeMeta } = require('./seo-head');
 const { jsonLdScript } = require('./structured-data');
+const { searchIcon } = require('./icons');
 
 const PRICING_PLANS = [
   { name: 'SMALL PLAN', slug: 'combo-seo-tools-small', price: '$15' },
@@ -47,8 +48,11 @@ function renderHead({ title, description, canonical, depth, extra = '', seo, jso
   <title>${escapeMeta(seoMeta.title)}</title>
   <meta name="description" content="${escapeMeta(seoMeta.description)}">
   ${renderSeoTags(seoMeta)}
-  <link rel="icon" href="${p}favicon.ico">
+  <link rel="icon" href="${p}favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="${p}icon.svg">
+  <link rel="apple-touch-icon" href="${p}icon.svg">
   <link rel="manifest" href="${p}manifest.json">
+  <meta name="theme-color" content="#14b8a6">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -100,6 +104,7 @@ function renderHeader(pages, depth) {
         </div>
         <div class="flex items-center gap-3">
           <div class="hidden lg:block relative search-container">
+            ${searchIcon('sm')}
             <input type="text" placeholder="Search..." data-search-input class="w-64 pl-10 pr-4 py-2 bg-white/10 border border-white/20 rounded-full text-white placeholder:text-white/70 focus:outline-none focus:border-teal-400 text-sm">
             <div class="hidden absolute top-full mt-2 w-96 bg-slate-900 rounded-xl shadow-2xl border border-white/10 z-[105] max-h-[500px] overflow-y-auto" data-search-results></div>
           </div>

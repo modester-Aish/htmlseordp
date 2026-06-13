@@ -22,6 +22,7 @@ const { hrefPage, hrefHome } = require('./lib/internal-links');
 const { renderWpPageBody } = require('./lib/wp-page-generator');
 const { renderContactPageBody } = require('./lib/contact-page');
 const { renderInfoShell } = require('./lib/info-page-layout');
+const { searchIcon } = require('./lib/icons');
 
 const BOOKMARK_SVG = `<svg class="w-5 h-5 text-slate-900" fill="currentColor" viewBox="0 0 20 20"><path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"/></svg>`;
 const { execSync } = require('child_process');
@@ -286,7 +287,10 @@ function generateSearch(pages) {
     subtitle: 'Find products, pages, and resources across the site.',
     depth: 1,
     content: `<div class="card-gradient rounded-2xl border-2 border-slate-700 p-6 md:p-8">
-      <input type="text" data-search-page-input placeholder="Search products, pages, tools..." class="w-full px-4 py-4 bg-slate-800/80 border-2 border-slate-600 rounded-xl text-white placeholder:text-slate-500 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500 mb-6">
+      <div class="relative mb-6">
+        ${searchIcon('lg')}
+        <input type="text" data-search-page-input placeholder="Search products, pages, tools..." class="w-full pl-12 pr-4 py-4 bg-slate-800/80 border-2 border-slate-600 rounded-xl text-white placeholder:text-slate-500 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500">
+      </div>
       <div data-search-page-results class="space-y-3"></div>
       <p class="text-slate-500 text-sm text-center mt-6" data-search-hint>Start typing to search...</p>
     </div>`,
