@@ -9,6 +9,7 @@ const { ensureImgAlt, removeFirstHeading, downgradeH1ToH2 } = require('./content
 const { localizeInternalLinks, hrefPage, hrefProduct } = require('./internal-links');
 
 const SIGNUP_URL = 'https://members.seotoolsgroupbuy.us/signup';
+const PRODUCTS_PAGE_SIZE = 24;
 
 /** Canonical shop categories — scraped data includes many duplicate SEO keyword “categories”. */
 const PRIMARY_CATEGORIES = new Map([
@@ -426,9 +427,28 @@ function renderProductPage(product, pages, allProducts) {
   });
 }
 
+function buildProductsCatalog(products) {
+  return products.map((product) => {
+    const name = getProductName(product);
+    const short = (product.customShort || product.shortDescription || '')
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    return {
+      slug: product.slug,
+      name,
+      price: getDisplayPrice(product),
+      image: product.image || '',
+      rating: product.average_rating || 0,
+      reviews: product.rating_count || 0,
+      search: `${name} ${product.slug} ${short}`.toLowerCase(),
+    };
+  });
+}
+
 function renderProductsListing(products, pages) {
-  const p = assetPrefix(1);
-  const cards = products.map((prod) => productCard(prod, 1)).join('');
+  const total = products.length;
+  const totalPages = Math.max(1, Math.ceil(total / PRODUCTS_PAGE_SIZE));
   const body = `<div class="min-h-screen bg-slate-900">
   <div class="absolute inset-0 matrix-container opacity-10">
     <div class="matrix-grid"></div>
@@ -450,6 +470,7 @@ function renderProductsListing(products, pages) {
         <p class="text-lg text-slate-300 max-w-2xl mx-auto">
           Access Ahrefs, SEMrush, Moz Pro, ChatGPT Plus &amp; 50+ premium tools at 90% discount.
         </p>
+        <p class="text-sm text-slate-400 mt-3" data-products-count>${total} tools available</p>
       </div>
     </div>
   </section>
@@ -457,7 +478,15 @@ function renderProductsListing(products, pages) {
   <div class="pb-16 relative z-10">
     <div class="container mx-auto px-4">
       <input type="text" data-products-filter placeholder="Search products..." class="w-full max-w-xl mx-auto block mb-8 px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white focus:border-teal-500 focus:outline-none">
-      <div class="products-grid" data-products-grid>${cards}</div>
+      <div class="products-grid min-h-[320px]" data-products-grid>
+        <div class="col-span-full flex items-center justify-center py-16 text-slate-400" data-products-loading>Loading products...</div>
+      </div>
+      <nav class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4" data-products-pagination hidden>
+        <button type="button" data-page-prev class="px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white hover:border-teal-500 disabled:opacity-40 disabled:cursor-not-allowed">Previous</button>
+        <div class="flex flex-wrap items-center justify-center gap-2" data-page-numbers></div>
+        <button type="button" data-page-next class="px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-white hover:border-teal-500 disabled:opacity-40 disabled:cursor-not-allowed">Next</button>
+        <span class="text-sm text-slate-400" data-page-info></span>
+      </nav>
     </div>
   </div>
 </div>`;
@@ -481,7 +510,15 @@ function renderProductsListing(products, pages) {
     seo,
     jsonLd: productsListingGraph(products, seo.title, seo.description),
     scripts: ['app.js', 'products-filter.js'],
+    extraHead: `<script>window.SEORDP_PRODUCTS_PAGE_SIZE=${PRODUCTS_PAGE_SIZE};window.SEORDP_PRODUCTS_TOTAL=${total};window.SEORDP_PRODUCTS_PAGES=${totalPages};</script>`,
   });
 }
 
-module.exports = { renderProductPage, renderProductsListing, getDisplayPrice, productCard };
+module.exports = {
+  renderProductPage,
+  renderProductsListing,
+  getDisplayPrice,
+  productCard,
+  buildProductsCatalog,
+  PRODUCTS_PAGE_SIZE,
+};

@@ -16,7 +16,7 @@ const {
   assetPrefix,
 } = require('./lib/utils');
 const { renderHomepage } = require('./templates/homepage');
-const { getDisplayPrice, renderProductPage, renderProductsListing } = require('./lib/products-generator');
+const { getDisplayPrice, renderProductPage, renderProductsListing, buildProductsCatalog } = require('./lib/products-generator');
 const { applyCustomDescription } = require('./lib/product-content');
 const { hrefPage, hrefHome } = require('./lib/internal-links');
 const { renderWpPageBody } = require('./lib/wp-page-generator');
@@ -328,6 +328,7 @@ function generateProducts(pages) {
   });
 
   writePage('products/index.html', renderProductsListing(products, pages));
+  writePage('js/products-catalog.json', JSON.stringify(buildProductsCatalog(products)));
   for (const product of products) {
     writePage(`${product.slug}/index.html`, renderProductPage(product, pages, products));
   }
