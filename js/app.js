@@ -17,8 +17,8 @@
 
   function resolvePageUrl(base, urlPath) {
     const clean = (urlPath || '').replace(/^\//, '').replace(/\/$/, '');
-    if (!clean) return base + 'index.html';
-    return base + clean + '/index.html';
+    if (!clean) return base;
+    return base + clean + '/';
   }
 
   const mobileToggle = $('[data-mobile-toggle]');

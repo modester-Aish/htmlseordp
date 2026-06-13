@@ -240,7 +240,7 @@ const STAR_SVG = '<svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d=
 
 function getToolHref(id, prefix) {
   const slug = TOOL_PRODUCT_LINKS[id] || id;
-  return `${prefix}${slug}/index.html`;
+  return `${prefix}${slug}/`;
 }
 
 function resolveToolImageSrc(tool, prefix) {

@@ -24,16 +24,14 @@ function normalizeSlug(raw) {
 }
 
 function hrefHome(depth) {
-  // Always link to index.html — ./ opens a folder listing under file:// on Windows
-  return `${assetPrefix(depth)}index.html`;
+  return depth === 0 ? './' : assetPrefix(depth);
 }
 
 function hrefPage(slug, depth) {
   const p = assetPrefix(depth);
   const s = normalizeSlug(slug);
   if (!s) return hrefHome(depth);
-  // index.html required for file:// local preview; web servers serve it for /slug/ too
-  return `${p}${s}/index.html`;
+  return `${p}${s}/`;
 }
 
 function hrefProduct(slug, depth) {
@@ -52,37 +50,37 @@ function localizeInternalLinks(html, depth) {
       const hash = (pathPart || '').includes('#') ? pathPart.slice(pathPart.indexOf('#')) : '';
       if (!path || path === '/') return `href="${hrefHome(depth)}"`;
       const slug = normalizeSlug(path.replace(/^\//, ''));
-      return `href="${p}${slug}/index.html${hash}"`;
+      return `href="${p}${slug}/${hash}"`;
     }
   );
 
   // WP plan pages often omit closing quote: href="/pages/slug">View Details
   out = out.replace(/href=["']\/pages\/([^"'#?>\s]+)\/?["']?(?=>)/gi, (match, slug) => {
     const fixed = normalizeSlug(slug);
-    return `href="${p}${fixed}/index.html"`;
+    return `href="${p}${fixed}/"`;
   });
 
   out = out.replace(/href=["']\/pages\/([^"'#?]+)["']/gi, (match, slug) => {
     const fixed = normalizeSlug(slug);
-    return `href="${p}${fixed}/index.html"`;
+    return `href="${p}${fixed}/"`;
   });
 
   out = out.replace(/href=["']\/blog\/([^"'#?]+)([#"']?[^"']*)["']/gi, (match, slug, extra) => {
     const fixed = normalizeSlug(slug);
     const suffix = (extra || '').startsWith('#') ? extra : '';
-    return `href="${p}${fixed}/index.html${suffix}"`;
+    return `href="${p}${fixed}/${suffix}"`;
   });
 
   out = out.replace(/href=["']\/([^"'#?>\s]+)\/?["']?(?=>)/gi, (match, path) => {
     if (path.startsWith('wp-content/')) return match;
     const slug = normalizeSlug(path);
-    return `href="${p}${slug}/index.html"`;
+    return `href="${p}${slug}/"`;
   });
 
   out = out.replace(/href=["']\/([^"'#?]+)["']/gi, (match, path) => {
     if (path.startsWith('wp-content/')) return match;
     const slug = normalizeSlug(path);
-    return `href="${p}${slug}/index.html"`;
+    return `href="${p}${slug}/"`;
   });
 
   Object.entries(SLUG_ALIASES).forEach(([broken, correct]) => {
@@ -90,7 +88,7 @@ function localizeInternalLinks(html, depth) {
       `href=["'](?:https?:\\/\\/(?:www\\.)?seordp\\.net\\/)?${broken.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\/?["']`,
       'gi'
     );
-    out = out.replace(re, `href="${p}${correct}/index.html"`);
+    out = out.replace(re, `href="${p}${correct}/"`);
   });
 
   return out;

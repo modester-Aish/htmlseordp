@@ -8,6 +8,7 @@
     "scrape:gbst": "node scripts/scrape-gbst-shop.js",
     "scrape:gbst:test": "node scripts/scrape-gbst-shop.js --limit=10",
     "build:html": "node scripts/build.js",
+    "download:tool-images": "python scripts/download-official-tool-images.py",
     "build:css": "tailwindcss -i ./src/css/input.css -o ./css/main.css --minify",
     "build": "npm run build:html && npm run build:css",
     "setup": "npm run download:images && npm run build"
