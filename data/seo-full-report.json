@@ -1,0 +1,240 @@
+{
+  "generatedAt": "2026-06-08T12:03:32.816Z",
+  "site": "https://seordp.net",
+  "stats": {
+    "pages": 497
+  },
+  "sections": {
+    "sitemap": {
+      "xmlUrlCount": 496,
+      "notInXml": [
+        "search"
+      ],
+      "inXmlNotBuilt": []
+    },
+    "meta": {
+      "missingTitle": 0,
+      "missingDesc": 0,
+      "missingCanonical": 0,
+      "titleTooLong": 0,
+      "descTooShort": 0,
+      "descTooLong": 0,
+      "canonicalMismatch": 0,
+      "ogCanonicalMismatch": 0,
+      "titleOgMismatch": 0,
+      "noH1": 0,
+      "multipleH1": 0,
+      "noJsonLd": 0,
+      "invalidJsonLd": 0,
+      "imgNoAlt": 0,
+      "imgEmptyAlt": 0,
+      "ogImageRelative": 0,
+      "noindex": 1,
+      "missingLang": 0,
+      "missingViewport": 0,
+      "descContentMismatch": 23
+    },
+    "duplicates": {
+      "titleGroups": 0,
+      "descGroups": 7
+    },
+    "duplicateTitles": [],
+    "duplicateDescriptions": [
+      {
+        "descPreview": "semrush group buy is an analysis tool of online websites, wh",
+        "count": 2,
+        "pages": [
+          "1-xrush-group-buy",
+          "mrush-group-buy"
+        ]
+      },
+      {
+        "descPreview": "adspy group buy is a smart and powerful ad-supported softwar",
+        "count": 2,
+        "pages": [
+          "adspy-group-buy",
+          "adspy-social"
+        ]
+      },
+      {
+        "descPreview": "audioblocks group buy is a site dedicated to providing music",
+        "count": 2,
+        "pages": [
+          "audio-group-buy",
+          "audioblocks"
+        ]
+      },
+      {
+        "descPreview": "buy seo tools combo. get the best quality, cheap combo seo t",
+        "count": 3,
+        "pages": [
+          "combo-seo-tools-basic",
+          "combo-seo-tools-premium",
+          "combo-seo-tools-standard"
+        ]
+      },
+      {
+        "descPreview": "graphicstock group buy , it's a site where creators can find",
+        "count": 2,
+        "pages": [
+          "graphic-stock-group-buy",
+          "graphicstock"
+        ]
+      },
+      {
+        "descPreview": "wordai group buy is a tool to spin a paragraph or sentence t",
+        "count": 2,
+        "pages": [
+          "introduction-to-group-buy-seo-tools",
+          "wordai"
+        ]
+      },
+      {
+        "descPreview": "videoblocks group buy is a site that provides video archives",
+        "count": 2,
+        "pages": [
+          "video-group-buy",
+          "videoblocks"
+        ]
+      }
+    ],
+    "robots": {
+      "ok": true,
+      "issues": []
+    },
+    "sitemapIssues": [
+      "1 built pages missing from sitemap.xml"
+    ],
+    "rootAssets": [],
+    "internalBrokenLinks": [
+      {
+        "link": "adplexity-group-buy → ../products/index.html",
+        "count": 15
+      },
+      {
+        "link": "flikover → ../products/index.html",
+        "count": 15
+      },
+      {
+        "link": "theoptimizer → ../products/index.html",
+        "count": 13
+      },
+      {
+        "link": "get-stencil → ../products/index.html",
+        "count": 12
+      },
+      {
+        "link": "kwfinder-group-buy → ../products/index.html",
+        "count": 12
+      },
+      {
+        "link": "pixelied-group-buy → ../products/index.html",
+        "count": 12
+      },
+      {
+        "link": "creator-ai → ../products/index.html",
+        "count": 11
+      },
+      {
+        "link": "envato-elements → ../products/index.html",
+        "count": 11
+      },
+      {
+        "link": "frontendmasters-group-buy → ../products/index.html",
+        "count": 11
+      },
+      {
+        "link": "toolszap → ../products/index.html",
+        "count": 11
+      },
+      {
+        "link": "vectorizer-ai-group-buy → ../products/index.html",
+        "count": 11
+      },
+      {
+        "link": "veed-io → ../products/index.html",
+        "count": 11
+      },
+      {
+        "link": "airbrush-ai-group-buy → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "artistly-ai-group-buy → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "artspace-ai-group-buy → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "avatarbuilder-group-buy → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "beautiful-ai → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "boolv-video → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "buzzsumo-group-buy → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "claude-ai → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "copilot-github-group-buy → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "crello → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "digen-ai-group-buy → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "domcop-group-buy-plan-power → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "domcop-group-buy → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "everand → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "facebook-ad-spy-group-buy → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "fomoclips → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "getwsodo → ../products/index.html",
+        "count": 10
+      },
+      {
+        "link": "helium-10-group-buy-2024 → ../products/index.html",
+        "count": 10
+      }
+    ],
+    "schema": {
+      "productPagesWithSchema": 472,
+      "withOffers": 472
+    },
+    "hreflang": {
+      "pagesWithHreflang": 0
+    }
+  },
+  "issues": []
+}

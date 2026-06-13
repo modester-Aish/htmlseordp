@@ -1,0 +1,21 @@
+{
+  "name": "seordp-static-html",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Standalone HTML/CSS/JS version of SEORDP (no Next.js dependency)",
+  "scripts": {
+    "download:images": "node scripts/download-images.js",
+    "scrape:gbst": "node scripts/scrape-gbst-shop.js",
+    "scrape:gbst:test": "node scripts/scrape-gbst-shop.js --limit=10",
+    "build:html": "node scripts/build.js",
+    "build:css": "tailwindcss -i ./src/css/input.css -o ./css/main.css --minify",
+    "build": "npm run build:html && npm run build:css",
+    "setup": "npm run download:images && npm run build"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
+  }
+}

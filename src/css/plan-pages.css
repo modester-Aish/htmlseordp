@@ -1,0 +1,81 @@
+/* Plan / combo / pricing WP pages — Next.js PageView light content */
+
+.plan-page-content {
+  color: #0f172a;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.plan-page-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.plan-page-content a {
+  transition: opacity 0.2s;
+}
+
+.plan-page-content a:hover {
+  opacity: 0.9;
+}
+
+/* Tool list rows (normalized from WP flex blocks) */
+.plan-tool-row {
+  @apply flex items-start gap-3 py-2.5 px-3 rounded-lg bg-slate-50 mb-2 border border-slate-100;
+}
+.plan-check-icon {
+  @apply w-5 h-5 text-amber-500 shrink-0 mt-0.5;
+}
+.plan-tool-name {
+  @apply text-slate-800 font-medium text-sm leading-snug;
+}
+
+/* Category accordion (combo plan tool dropdowns) */
+.plan-category-acc {
+  @apply mb-4 rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden;
+}
+.plan-category-summary {
+  @apply flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 bg-gradient-to-r from-slate-50 to-white hover:from-teal-50 hover:to-white transition-colors;
+}
+.plan-category-summary::-webkit-details-marker {
+  display: none;
+}
+.plan-category-title {
+  @apply text-base md:text-lg font-bold text-slate-900;
+}
+.plan-category-chevron {
+  @apply text-teal-600 text-xs transition-transform duration-200 shrink-0;
+}
+.plan-category-acc[open] .plan-category-chevron {
+  transform: rotate(180deg);
+}
+.plan-category-body {
+  @apply px-5 pb-5 pt-1 border-t border-slate-100;
+}
+
+/* Pricing overview plan cards */
+.plan-page-content [style*="border-left: 5px solid"] {
+  border-radius: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* What's included gradient banner */
+.plan-page-content [style*="What's Included"],
+.plan-page-content h2[style*="What's"] {
+  color: inherit;
+}
+
+/* Prevent dark site prose overrides bleeding in */
+[data-plan-page] .page-content h1,
+[data-plan-page] .page-content h2,
+[data-plan-page] .page-content h3,
+[data-plan-page] .page-content h4,
+[data-plan-page] .page-content p,
+[data-plan-page] .page-content li,
+[data-plan-page] .page-content span {
+  /* inline WP styles take precedence when present */
+}
+
+[data-plan-page] .page-content > div {
+  max-width: 100%;
+}
