@@ -3,14 +3,14 @@
     "slug": "picovico",
     "name": "Picovico",
     "image": "assets/products/picovico.png",
-    "source": "cached",
+    "source": "picovico.com",
     "status": "ok"
   },
   {
     "slug": "terapeak",
     "name": "Teorapeak",
     "image": "assets/products/terapeak.png",
-    "source": "cached",
+    "source": "terapeak.com",
     "status": "ok"
   },
   {
@@ -262,8 +262,8 @@
     "slug": "brandoverflow",
     "name": "BrandOverflow",
     "image": "assets/products/brandoverflow.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "brandoverflow.com",
+    "status": "ok"
   },
   {
     "slug": "copy-ai",
@@ -353,8 +353,8 @@
     "slug": "advertsuite",
     "name": "Advertsuite",
     "image": "assets/products/advertsuite.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "advertsuite.co",
+    "status": "ok"
   },
   {
     "slug": "jenni-ai",
@@ -423,7 +423,7 @@
     "slug": "keyword-eye",
     "name": "Keyword Eye",
     "image": "assets/products/keyword-eye.png",
-    "source": "cached",
+    "source": "https://ph-files.imgix.net/f5758c1f-6ac2-4a34-a4af-519e8370ba92.png?auto=format&w=512&h=512&fit=max",
     "status": "ok"
   },
   {
@@ -437,8 +437,8 @@
     "slug": "hashtagforlikes",
     "name": "Hashtagforlikes Group Buy With 4.95$ Per Month &#8211; Full Feature",
     "image": "assets/products/hashtagforlikes.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "https://www.google.com/s2/favicons?domain=ritetag.com&sz=256",
+    "status": "ok"
   },
   {
     "slug": "rankdseo-keyword",
@@ -472,8 +472,8 @@
     "slug": "deepflush",
     "name": "Deepflush Group Buy With 4.95$| Unlimitted Search",
     "image": "assets/products/deepflush.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "https://www.google.com/s2/favicons?domain=serpstat.com&sz=256",
+    "status": "ok"
   },
   {
     "slug": "nobuna",
@@ -675,7 +675,7 @@
     "slug": "crazy-egg",
     "name": "CrazyEgg",
     "image": "assets/products/crazy-egg.png",
-    "source": "cached",
+    "source": "crazyegg.com",
     "status": "ok"
   },
   {
@@ -738,8 +738,8 @@
     "slug": "vidnami",
     "name": "Vidnami",
     "image": "assets/products/vidnami.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "https://www.google.com/s2/favicons?domain=contentfly.com&sz=256",
+    "status": "ok"
   },
   {
     "slug": "pikbest",
@@ -829,7 +829,7 @@
     "slug": "buzz-stream",
     "name": "BuzzStream",
     "image": "assets/products/buzz-stream.png",
-    "source": "cached",
+    "source": "buzzstream.com",
     "status": "ok"
   },
   {
@@ -871,7 +871,7 @@
     "slug": "wordai-group-buy",
     "name": "WordAi Group Buy With Full Featute Just 4.95$/ Month",
     "image": "assets/products/wordai-group-buy.png",
-    "source": "cached",
+    "source": "wordai.com",
     "status": "ok"
   },
   {
@@ -948,8 +948,8 @@
     "slug": "pipio-group-buy",
     "name": "Pipio Group Buy with 4.95$/ Month For Unlimitted",
     "image": "assets/products/pipio-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "https://www.google.com/s2/favicons?domain=synthesia.io&sz=256",
+    "status": "ok"
   },
   {
     "slug": "searchatlas",
@@ -1039,8 +1039,8 @@
     "slug": "katteb-ai-group-buy",
     "name": "Katteb ai Group Buy With 4.95$/ Month",
     "image": "assets/products/katteb-ai-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "katteb.com",
+    "status": "ok"
   },
   {
     "slug": "you-ai",
@@ -1102,8 +1102,8 @@
     "slug": "plugins-for-wordpress-websites-with-4-95-month",
     "name": "Plugins For WordPress Websites With 4.95$/ Month",
     "image": "assets/products/plugins-for-wordpress-websites-with-4-95-month.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "wordpress.org",
+    "status": "ok"
   },
   {
     "slug": "buybot-pro",
@@ -1116,8 +1116,8 @@
     "slug": "peppercontent-group",
     "name": "Peppercontent Group Buy With 4.95$/ Month For Unlimitted",
     "image": "assets/products/peppercontent-group.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "https://www.google.com/s2/favicons?domain=peppertype.ai&sz=256",
+    "status": "ok"
   },
   {
     "slug": "shortform",
@@ -1130,15 +1130,15 @@
     "slug": "murf-ai-group-buy",
     "name": "Murf AI Group Buy With 4.95$/ Month For Unlimitted",
     "image": "assets/products/murf-ai-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "murf.ai",
+    "status": "ok"
   },
   {
     "slug": "toons-ai",
     "name": "Toons. ai Group Buy With 4.95$/ Month",
     "image": "assets/products/toons-ai.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "toons.ai",
+    "status": "ok"
   },
   {
     "slug": "adobe",
@@ -1151,14 +1151,14 @@
     "slug": "pexda",
     "name": "Pexda",
     "image": "assets/products/pexda.png",
-    "source": "cached",
+    "source": "pexda.com",
     "status": "ok"
   },
   {
     "slug": "cognitiveseo",
     "name": "Cognitiiiveseo",
     "image": "assets/products/cognitiveseo.png",
-    "source": "cached",
+    "source": "cognitiveseo.com",
     "status": "ok"
   },
   {
@@ -1214,8 +1214,8 @@
     "slug": "switchy-io",
     "name": "Switchy io Group Buy With 4.95$ For Unlimitted",
     "image": "assets/products/switchy-io.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "switchy.io",
+    "status": "ok"
   },
   {
     "slug": "raven-tools",
@@ -1291,8 +1291,8 @@
     "slug": "gptzero-me",
     "name": "GPTZero.me Group Buy With 4.95$/ Month For Unlimitted",
     "image": "assets/products/gptzero-me.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "gptzero.me",
+    "status": "ok"
   },
   {
     "slug": "perplexity",
@@ -1333,8 +1333,8 @@
     "slug": "textwriter-ai",
     "name": "Textwriter.ai Group Buy With 4.95$/Month For Full Feature",
     "image": "assets/products/textwriter-ai.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "textwriter.ai",
+    "status": "ok"
   },
   {
     "slug": "clickdesigns-group-buy",
@@ -1375,8 +1375,8 @@
     "slug": "monica-im",
     "name": "Monica.im Group Buy With 4.95$/ Month",
     "image": "assets/products/monica-im.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "monica.im",
+    "status": "ok"
   },
   {
     "slug": "designbeast-app",
@@ -1424,22 +1424,22 @@
     "slug": "adsector",
     "name": "Adsector",
     "image": "assets/products/adsector.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "https://www.google.com/s2/favicons?domain=adspy.com&sz=256",
+    "status": "ok"
   },
   {
     "slug": "shophunter-io",
     "name": "Shophunter. io Group Buy With 4.95$ Per Month For Unlimitted",
     "image": "assets/products/shophunter-io.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "shophunter.io",
+    "status": "ok"
   },
   {
     "slug": "copy-space-ai",
     "name": "Copy space AI Group Buy Just 4.95$ Per Month For Unlimitted",
     "image": "assets/products/copy-space-ai.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "copyspace.ai",
+    "status": "ok"
   },
   {
     "slug": "gorails-group-buy",
@@ -1466,8 +1466,8 @@
     "slug": "frase-io",
     "name": "Fraseio",
     "image": "assets/products/frase-io.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "frase.io",
+    "status": "ok"
   },
   {
     "slug": "keyword-revealer",
@@ -1494,8 +1494,8 @@
     "slug": "minvo-pro-group-buy",
     "name": "Minvo.pro Group Buy With 4.95$ Per Month For Plan Paid",
     "image": "assets/products/minvo-pro-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "minvo.pro",
+    "status": "ok"
   },
   {
     "slug": "seoprofiler",
@@ -1515,8 +1515,8 @@
     "slug": "boolv-video",
     "name": "Boolv Video Group Buy With 4.95$ Per Month",
     "image": "assets/products/boolv-video.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "boolv.video",
+    "status": "ok"
   },
   {
     "slug": "abacus",
@@ -1543,8 +1543,8 @@
     "slug": "facebook-ad-spy-group-buy",
     "name": "Review Adspy SEORDP For Salespeople, Marketing",
     "image": "assets/products/facebook-ad-spy-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "adspy.com",
+    "status": "ok"
   },
   {
     "slug": "longshot-ai",
@@ -1606,8 +1606,8 @@
     "slug": "poweradspy-group-buy-review",
     "name": "PowerAdSpy Group Buy Review| Price is 13$/ Month For Unlimitted",
     "image": "assets/products/poweradspy-group-buy-review.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "poweradspy.com",
+    "status": "ok"
   },
   {
     "slug": "seoptimer",
@@ -1669,14 +1669,14 @@
     "slug": "cbengine",
     "name": "Cbengine",
     "image": "assets/products/cbengine.png",
-    "source": "cached",
+    "source": "cbengine.com",
     "status": "ok"
   },
   {
     "slug": "lucidchart",
     "name": "Lucidchart",
     "image": "assets/products/lucidchart.png",
-    "source": "cached",
+    "source": "lucidchart.com",
     "status": "ok"
   },
   {
@@ -1690,8 +1690,8 @@
     "slug": "closercopy",
     "name": "Closercopy",
     "image": "assets/products/closercopy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "https://ph-files.imgix.net/15a72c70-acec-43d0-a2cc-09e036bc525d.png?auto=format&w=512&h=512&fit=max",
+    "status": "ok"
   },
   {
     "slug": "ahrefs-group-buy",
@@ -1739,8 +1739,8 @@
     "slug": "rytr-me-group-buy",
     "name": "Rytr me Group Buy Price Just 4.95$ Per Month",
     "image": "assets/products/rytr-me-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "rytr.me",
+    "status": "ok"
   },
   {
     "slug": "spyhero",
@@ -1823,7 +1823,7 @@
     "slug": "unbounce",
     "name": "Unbounce",
     "image": "assets/products/unbounce.png",
-    "source": "cached",
+    "source": "unbounce.com",
     "status": "ok"
   },
   {
@@ -1879,14 +1879,14 @@
     "slug": "turboscribe-ai-group-buy",
     "name": "Turboscribe AI Group Buy Price Just 4.95$ Per Month",
     "image": "assets/products/turboscribe-ai-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "turboscribe.ai",
+    "status": "ok"
   },
   {
     "slug": "indexification",
     "name": "Indexification",
     "image": "assets/products/indexification.png",
-    "source": "cached",
+    "source": "indexification.com",
     "status": "ok"
   },
   {
@@ -1914,8 +1914,8 @@
     "slug": "bmagic-group-buy",
     "name": "Submagic Group Buy Price Is 5.95$ Per Month For Unlimitted",
     "image": "assets/products/bmagic-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "brandmark.io",
+    "status": "ok"
   },
   {
     "slug": "minea-group-buy",
@@ -1949,8 +1949,8 @@
     "slug": "revoicer-app-group-buy",
     "name": "Revoicer App Group Buy Price Is 4.95$ Per Month",
     "image": "assets/products/revoicer-app-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "revoicer.com",
+    "status": "ok"
   },
   {
     "slug": "seller-prime",
@@ -1963,8 +1963,8 @@
     "slug": "biq-cloud",
     "name": "Biq Cloud",
     "image": "assets/products/biq-cloud.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "https://www.google.com/s2/favicons?domain=biq.com&sz=256",
+    "status": "ok"
   },
   {
     "slug": "colinkri-group-buy",
@@ -1998,8 +1998,8 @@
     "slug": "meshey-ai-group-buy",
     "name": "Meshey AI Group Buy Just With 4.95$ Per Month",
     "image": "assets/products/meshey-ai-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "https://www.google.com/s2/favicons?domain=meshy.ai&sz=256",
+    "status": "ok"
   },
   {
     "slug": "seozoom-group-buy",
@@ -2138,8 +2138,8 @@
     "slug": "keywordinsights-ai",
     "name": "Keywordinsights.ai Group Buy With 4.95$/ Month",
     "image": "assets/products/keywordinsights-ai.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "keywordinsights.ai",
+    "status": "ok"
   },
   {
     "slug": "frontendmasters-group-buy",
@@ -2173,8 +2173,8 @@
     "slug": "xrefs-agency-group-buy",
     "name": "Xrefs Agency",
     "image": "assets/products/xrefs-agency-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "ahrefs.com",
+    "status": "ok"
   },
   {
     "slug": "imgkits-group-buy",
@@ -2208,14 +2208,14 @@
     "slug": "pippiads-group-buy-new",
     "name": "Pipiads",
     "image": "assets/products/pippiads-group-buy-new.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "pipiads.com",
+    "status": "ok"
   },
   {
     "slug": "skill-share",
     "name": "SkillShare",
     "image": "assets/products/skill-share.png",
-    "source": "cached",
+    "source": "skillshare.com",
     "status": "ok"
   },
   {
@@ -2229,8 +2229,8 @@
     "slug": "pipiads-2024",
     "name": "Pipiads",
     "image": "assets/products/pipiads-2024.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "pipiads.com",
+    "status": "ok"
   },
   {
     "slug": "notegpt-group-buy",
@@ -2334,8 +2334,8 @@
     "slug": "everbee-io-group-buy",
     "name": "Everbee IO Group Buy Price Is 4.95$ Per Month &#8211; Tools Esty",
     "image": "assets/products/everbee-io-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "everbee.io",
+    "status": "ok"
   },
   {
     "slug": "creativeos-group-buy",
@@ -2348,8 +2348,8 @@
     "slug": "theoptimizer-io-group-buy",
     "name": "TheOptimizer io Group Buy Price is 4.95$ Per Month",
     "image": "assets/products/theoptimizer-io-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "theoptimizer.io",
+    "status": "ok"
   },
   {
     "slug": "brain-fm-group-buy",
@@ -2369,8 +2369,8 @@
     "slug": "operator-chatgpt-group-buy",
     "name": "Operator ChatGPT Group Buy Just With 4.95$ Per Month",
     "image": "assets/products/operator-chatgpt-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "openai.com",
+    "status": "ok"
   },
   {
     "slug": "viralytic-group-buy",
@@ -2439,7 +2439,7 @@
     "slug": "wordai",
     "name": "Wordai",
     "image": "assets/products/wordai.png",
-    "source": "cached",
+    "source": "wordai.com",
     "status": "ok"
   },
   {
@@ -2523,8 +2523,8 @@
     "slug": "chatbotapp-ai-group-buy",
     "name": "Chatbotapp ai Group Buy Price is 4.95$ Per Month",
     "image": "assets/products/chatbotapp-ai-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "chatbotapp.ai",
+    "status": "ok"
   },
   {
     "slug": "graphic-stock-group-buy",
@@ -2537,7 +2537,7 @@
     "slug": "serpstat-group-buy",
     "name": "Serpstat Group Buy Just With 4.95$ Per Month",
     "image": "assets/products/serpstat-group-buy.png",
-    "source": "cached",
+    "source": "serpstat.com",
     "status": "ok"
   },
   {
@@ -2558,8 +2558,8 @@
     "slug": "artistly-ai-group-buy",
     "name": "Artistly AI Group Buy Price is 4.95$ Per Month For Plan Paid",
     "image": "assets/products/artistly-ai-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "artistly.ai",
+    "status": "ok"
   },
   {
     "slug": "genspark-ai-group-buy",
@@ -2649,8 +2649,8 @@
     "slug": "ehunt-ai-group-buy",
     "name": "Ehunt AI Group Buy Price is 6.95$ Per Month",
     "image": "assets/products/ehunt-ai-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "ehunt.ai",
+    "status": "ok"
   },
   {
     "slug": "vidsubtitle-app-group-buy",
@@ -2754,8 +2754,8 @@
     "slug": "talkingphotos-ai-group-buy",
     "name": "TalkingPhotos AI Group Buy Just With 4.95$ Per Month For Unlimitted",
     "image": "assets/products/talkingphotos-ai-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "talkingphotos.ai",
+    "status": "ok"
   },
   {
     "slug": "copilot-github-group-buy",
@@ -2768,8 +2768,8 @@
     "slug": "mokker-ai-group-buy",
     "name": "Mokker AI Group Buy Just With 4.95$ Per Month For Plan Paid",
     "image": "assets/products/mokker-ai-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "mokker.ai",
+    "status": "ok"
   },
   {
     "slug": "videoexpress-ai-group-buy",
@@ -2838,7 +2838,7 @@
     "slug": "majestic-seo-group-buy",
     "name": "Majestic Seo Group Buy Just With 6.95$ For Plan Pro",
     "image": "assets/products/majestic-seo-group-buy.png",
-    "source": "cached",
+    "source": "majestic.com",
     "status": "ok"
   },
   {
@@ -2852,8 +2852,8 @@
     "slug": "stockimg-ai-group-buy",
     "name": "Stockimg AI Group Buy Just With 4.95$ Per Month For Plan Paid",
     "image": "assets/products/stockimg-ai-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "stockimg.ai",
+    "status": "ok"
   },
   {
     "slug": "getwsodo",
@@ -2922,7 +2922,7 @@
     "slug": "keywordtool",
     "name": "Keywordtool",
     "image": "assets/products/keywordtool.png",
-    "source": "cached",
+    "source": "keywordtool.io",
     "status": "ok"
   },
   {
@@ -2943,7 +2943,7 @@
     "slug": "kwfinder-group-buy",
     "name": "KWFinder Group Buy Price Just 6.95$ For Unlimitted",
     "image": "assets/products/kwfinder-group-buy.png",
-    "source": "cached",
+    "source": "kwfinder.com",
     "status": "ok"
   },
   {
@@ -2971,7 +2971,7 @@
     "slug": "serpstat",
     "name": "Serpstat",
     "image": "assets/products/serpstat.png",
-    "source": "cached",
+    "source": "serpstat.com",
     "status": "ok"
   },
   {
@@ -2999,7 +2999,7 @@
     "slug": "majestic-seo",
     "name": "MajesticSeo",
     "image": "assets/products/majestic-seo.png",
-    "source": "cached",
+    "source": "majestic.com",
     "status": "ok"
   },
   {
@@ -3013,8 +3013,8 @@
     "slug": "chatgpt-group-buy-plus-pro",
     "name": "ChatGPT Group Buy Price is 4.95$/ Month, Stable",
     "image": "assets/products/chatgpt-group-buy-plus-pro.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "openai.com",
+    "status": "ok"
   },
   {
     "slug": "mrush-group-buy",
@@ -3041,8 +3041,8 @@
     "slug": "iamaffiliate-forum",
     "name": "imaffiliate Gogum",
     "image": "assets/products/iamaffiliate-forum.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "affiliatefix.com",
+    "status": "ok"
   },
   {
     "slug": "buzzsumo",
@@ -3055,8 +3055,8 @@
     "slug": "best-ai-studio-pactory-for-video-creation",
     "name": "Best AI Studio Pactory for Video Creation",
     "image": "assets/products/best-ai-studio-pactory-for-video-creation.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "runwayml.com",
+    "status": "ok"
   },
   {
     "slug": "gemini-group-buy",
@@ -3132,8 +3132,8 @@
     "slug": "one-hour-indexing",
     "name": "One Hour Indexing",
     "image": "assets/products/one-hour-indexing.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "https://www.google.com/s2/favicons?domain=indexification.com&sz=256",
+    "status": "ok"
   },
   {
     "slug": "combo-all-biggest-seo-tools",
@@ -3258,8 +3258,8 @@
     "slug": "artspace-ai-group-buy",
     "name": "Artspace ai Group Buy Just With 4.95$/ Month For unlimitted",
     "image": "assets/products/artspace-ai-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "artspace.ai",
+    "status": "ok"
   },
   {
     "slug": "spamzilla",
@@ -3279,35 +3279,35 @@
     "slug": "mojo-video-group-buy",
     "name": "Mojo Video Group Buy| Just With 4.95$ Per Month",
     "image": "assets/products/mojo-video-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "mojo.video",
+    "status": "ok"
   },
   {
     "slug": "humantalk-app-group-buy",
     "name": "HumanTalk App Group Buy| Cheap Cost Just 4.95$/ Month",
     "image": "assets/products/humantalk-app-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "humantalk.io",
+    "status": "ok"
   },
   {
     "slug": "rewritify-ai-group-buy",
     "name": "Rewritify AI Group Buy Just With 4.95$/ Month For Unlimitted",
     "image": "assets/products/rewritify-ai-group-buy.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "rewritify.ai",
+    "status": "ok"
   },
   {
     "slug": "helium10-group-buy-12",
     "name": "Heliguum10",
     "image": "assets/products/helium10-group-buy-12.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "helium10.com",
+    "status": "ok"
   },
   {
     "slug": "sale-tools-ebay",
     "name": "Combo Sale Tools Ebay",
     "image": "assets/products/sale-tools-ebay.png",
-    "source": "generated-fallback",
-    "status": "fallback"
+    "source": "ebay.com",
+    "status": "ok"
   }
 ]

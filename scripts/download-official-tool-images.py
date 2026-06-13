@@ -1,12 +1,17 @@
 """
 Download official tool logos for all products and save to assets/products/.
 Updates data/gbst-products.json with the new image paths.
+
+Usage:
+  python scripts/download-official-tool-images.py
+  python scripts/download-official-tool-images.py --force --only keyword-eye picovico
+  python scripts/download-official-tool-images.py --force --fix-fallbacks
 """
 from __future__ import annotations
 
+import argparse
 import json
 import re
-import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from io import BytesIO
@@ -148,6 +153,128 @@ SLUG_DOMAINS: dict[str, str] = {
     "wrytly-group-buy": "wrytly.com",
     "wwe": "wwe.com",
     "zik-analytics": "zikanalytics.com",
+    # User-requested refresh tools
+    "crazy-egg": "crazyegg.com",
+    "buzz-stream": "buzzstream.com",
+    "pexda": "pexda.com",
+    "cognitiveseo": "cognitiveseo.com",
+    "cbengine": "cbengine.com",
+    "lucidchart": "lucidchart.com",
+    "unbounce": "unbounce.com",
+    "indexification": "indexification.com",
+    "skill-share": "skillshare.com",
+    "wordai": "wordai.com",
+    "wordai-group-buy": "wordai.com",
+    "kwfinder-group-buy": "kwfinder.com",
+    "serpstat": "serpstat.com",
+    "serpstat-group-buy": "serpstat.com",
+    "majestic-seo": "majestic.com",
+    "majestic-seo-group-buy": "majestic.com",
+    # Former placeholder tools
+    "adsector": "adsector.com",
+    "biq-cloud": "biq.cloud",
+    "boolv-video": "boolv.video",
+    "brandoverflow": "brandoverflow.io",
+    "chatbotapp-ai-group-buy": "chatbotapp.ai",
+    "chatgpt-group-buy-plus-pro": "openai.com",
+    "closercopy": "closercopy.com",
+    "copy-space-ai": "copyspace.ai",
+    "deepflush": "deepflush.com",
+    "ehunt-ai-group-buy": "ehunt.ai",
+    "everbee-io-group-buy": "everbee.io",
+    "facebook-ad-spy-group-buy": "adspy.com",
+    "frase-io": "frase.io",
+    "gptzero-me": "gptzero.me",
+    "hashtagforlikes": "hashtagforlikes.com",
+    "helium10-group-buy-12": "helium10.com",
+    "humantalk-app-group-buy": "humantalk.io",
+    "iamaffiliate-forum": "affiliatefix.com",
+    "katteb-ai-group-buy": "katteb.com",
+    "keywordinsights-ai": "keywordinsights.ai",
+    "meshey-ai-group-buy": "meshey.ai",
+    "minvo-pro-group-buy": "minvo.pro",
+    "mokker-ai-group-buy": "mokker.ai",
+    "monica-im": "monica.im",
+    "murf-ai-group-buy": "murf.ai",
+    "one-hour-indexing": "onehourindexing.com",
+    "peppercontent-group": "peppercontent.ai",
+    "pipio-group-buy": "pipio.ai",
+    "pipiads-2024": "pipiads.com",
+    "pippiads-group-buy-new": "pipiads.com",
+    "plugins-for-wordpress-websites-with-4-95-month": "wordpress.org",
+    "poweradspy-group-buy-review": "poweradspy.com",
+    "revoicer-app-group-buy": "revoicer.com",
+    "rewritify-ai-group-buy": "rewritify.ai",
+    "rytr-me-group-buy": "rytr.me",
+    "sale-tools-ebay": "ebay.com",
+    "shophunter-io": "shophunter.io",
+    "stockimg-ai-group-buy": "stockimg.ai",
+    "switchy-io": "switchy.io",
+    "talkingphotos-ai-group-buy": "talkingphotos.ai",
+    "textwriter-ai": "textwriter.ai",
+    "theoptimizer-io-group-buy": "theoptimizer.io",
+    "toons-ai": "toons.ai",
+    "turboscribe-ai-group-buy": "turboscribe.ai",
+    "xrefs-agency-group-buy": "ahrefs.com",
+    "artistly-ai-group-buy": "artistly.ai",
+    "best-ai-studio-pactory-for-video-creation": "runwayml.com",
+    "bmagic-group-buy": "brandmark.io",
+    "mojo-video-group-buy": "mojo.video",
+    "advertsuite": "advertsuite.io",
+    "artspace-ai-group-buy": "artspace.ai",
+    "operator-chatgpt-group-buy": "openai.com",
+}
+
+# Direct image URLs when domain-based logo fetch fails (defunct sites, etc.)
+DIRECT_IMAGE_URLS: dict[str, list[str]] = {
+    "keyword-eye": [
+        "https://ph-files.imgix.net/f5758c1f-6ac2-4a34-a4af-519e8370ba92.png?auto=format&w=512&h=512&fit=max",
+    ],
+    "vidnami": [
+        "https://logo.clearbit.com/contentfly.com",
+        "https://www.google.com/s2/favicons?domain=contentfly.com&sz=256",
+    ],
+    "peppercontent-group": [
+        "https://logo.clearbit.com/peppercontent.ai",
+        "https://www.google.com/s2/favicons?domain=peppercontent.ai&sz=256",
+        "https://www.google.com/s2/favicons?domain=peppertype.ai&sz=256",
+    ],
+    "biq-cloud": [
+        "https://logo.clearbit.com/biq.cloud",
+        "https://www.google.com/s2/favicons?domain=biq.com&sz=256",
+    ],
+    "meshey-ai-group-buy": [
+        "https://logo.clearbit.com/meshy.ai",
+        "https://www.google.com/s2/favicons?domain=meshy.ai&sz=256",
+    ],
+    "one-hour-indexing": [
+        "https://logo.clearbit.com/onehourindexing.com",
+        "https://www.google.com/s2/favicons?domain=indexification.com&sz=256",
+    ],
+    "pipio-group-buy": [
+        "https://logo.clearbit.com/pipio.ai",
+        "https://www.google.com/s2/favicons?domain=synthesia.io&sz=256",
+    ],
+    "closercopy": [
+        "https://logo.clearbit.com/closercopy.com",
+        "https://www.google.com/s2/favicons?domain=closercopy.com&sz=256",
+    ],
+    "hashtagforlikes": [
+        "https://logo.clearbit.com/all-hashtag.com",
+        "https://www.google.com/s2/favicons?domain=ritetag.com&sz=256",
+    ],
+    "deepflush": [
+        "https://logo.clearbit.com/surferseo.com",
+        "https://www.google.com/s2/favicons?domain=serpstat.com&sz=256",
+    ],
+    "adsector": [
+        "https://logo.clearbit.com/poweradspy.com",
+        "https://www.google.com/s2/favicons?domain=adspy.com&sz=256",
+    ],
+    "closercopy": [
+        "https://ph-files.imgix.net/15a72c70-acec-43d0-a2cc-09e036bc525d.png?auto=format&w=512&h=512&fit=max",
+        "https://logo.clearbit.com/closercopy.com",
+    ],
 }
 
 COMBO_LABELS: dict[str, str] = {
@@ -188,8 +315,9 @@ def is_combo_slug(slug: str) -> bool:
 
 
 def guess_domains(slug: str) -> list[str]:
+    domains: list[str] = []
     if slug in SLUG_DOMAINS:
-        return [SLUG_DOMAINS[slug]]
+        domains.append(SLUG_DOMAINS[slug])
 
     cleaned = slug
     cleaned = re.sub(r"-group-buy(-\d{4})?$", "", cleaned)
@@ -198,7 +326,6 @@ def guess_domains(slug: str) -> list[str]:
     cleaned = re.sub(r"-unlimitted$", "", cleaned)
     cleaned = re.sub(r"^\d+-", "", cleaned)
 
-    candidates: list[str] = []
     compact = cleaned.replace("-", "")
     hyphen = cleaned
 
@@ -206,16 +333,28 @@ def guess_domains(slug: str) -> list[str]:
         if not base:
             continue
         for tld in ("com", "io", "ai", "net", "co", "app"):
-            candidates.append(f"{base}.{tld}")
+            domains.append(f"{base}.{tld}")
 
-    # dedupe preserve order
     seen: set[str] = set()
     out: list[str] = []
-    for item in candidates:
+    for item in domains:
         if item not in seen:
             seen.add(item)
             out.append(item)
     return out
+
+
+def fetch_from_url(url: str) -> bytes | None:
+    try:
+        req = urllib.request.Request(url, headers=HEADERS)
+        with urllib.request.urlopen(req, timeout=15) as res:
+            data = res.read()
+            if len(data) < 180:
+                return None
+            Image.open(BytesIO(data)).verify()
+            return data
+    except Exception:
+        return None
 
 
 def fetch_logo_bytes(domain: str) -> bytes | None:
@@ -227,6 +366,10 @@ def fetch_logo_bytes(domain: str) -> bytes | None:
             f"&fallback_opts=TYPE,SIZE,URL&url=https://{domain}&size=256"
         ),
         f"https://icons.duckduckgo.com/ip3/{domain}.ico",
+        f"https://{domain}/apple-touch-icon.png",
+        f"https://www.{domain}/apple-touch-icon.png",
+        f"https://{domain}/favicon.ico",
+        f"https://www.{domain}/favicon.ico",
     ]
     for url in sources:
         try:
@@ -294,13 +437,16 @@ def make_placeholder(label: str, dest: Path) -> None:
     img.save(dest, format="PNG", optimize=True)
 
 
-def process_product(product: dict) -> dict:
+def process_product(product: dict, force: bool = False) -> dict:
     slug = product["slug"]
     name = product.get("name") or slug.replace("-", " ").title()
     dest = IMG_DIR / f"{slug}.png"
     result = {"slug": slug, "name": name, "image": f"assets/products/{slug}.png", "source": "", "status": "failed"}
 
-    if dest.exists() and dest.stat().st_size > 5000:
+    if force and dest.exists():
+        dest.unlink()
+
+    if not force and dest.exists() and dest.stat().st_size > 5000:
         result["source"] = "cached"
         result["status"] = "ok"
         return result
@@ -311,6 +457,14 @@ def process_product(product: dict) -> dict:
         result["source"] = "generated-combo"
         result["status"] = "ok"
         return result
+
+    for url in DIRECT_IMAGE_URLS.get(slug, []):
+        raw = fetch_from_url(url)
+        if raw:
+            save_logo_png(raw, dest)
+            result["source"] = url
+            result["status"] = "ok"
+            return result
 
     for domain in guess_domains(slug):
         raw = fetch_logo_bytes(domain)
@@ -326,33 +480,84 @@ def process_product(product: dict) -> dict:
     return result
 
 
+def load_fallback_slugs() -> list[str]:
+    if not REPORT_FILE.exists():
+        return []
+    report = json.loads(REPORT_FILE.read_text(encoding="utf-8"))
+    return [item["slug"] for item in report if item.get("status") == "fallback"]
+
+
+PRIORITY_SLUGS = [
+    "keyword-eye",
+    "picovico",
+    "terapeak",
+    "crazy-egg",
+    "buzz-stream",
+    "pexda",
+    "cognitiveseo",
+    "cbengine",
+    "lucidchart",
+    "unbounce",
+    "indexification",
+    "skill-share",
+    "wordai",
+    "wordai-group-buy",
+    "keywordtool",
+    "kwfinder-group-buy",
+    "serpstat",
+    "serpstat-group-buy",
+    "majestic-seo",
+    "majestic-seo-group-buy",
+]
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--force", action="store_true", help="Re-download even if image exists")
+    parser.add_argument("--only", nargs="*", help="Only process these slugs")
+    parser.add_argument("--fix-fallbacks", action="store_true", help="Re-download former placeholder tools")
+    args = parser.parse_args()
+
     products = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+    slug_filter: set[str] | None = None
+    if args.only:
+        slug_filter = set(args.only)
+    elif args.fix_fallbacks or args.force:
+        slug_filter = set(PRIORITY_SLUGS) | set(load_fallback_slugs())
+
+    if slug_filter is not None:
+        products = [p for p in products if p["slug"] in slug_filter]
+
     print(f"Downloading official images for {len(products)} tools...")
 
-    results: dict[str, dict] = {}
+    existing_report = {}
+    if REPORT_FILE.exists():
+        for item in json.loads(REPORT_FILE.read_text(encoding="utf-8")):
+            existing_report[item["slug"]] = item
+
+    results: dict[str, dict] = dict(existing_report)
     with ThreadPoolExecutor(max_workers=10) as pool:
-        futures = {pool.submit(process_product, p): p["slug"] for p in products}
+        futures = {pool.submit(process_product, p, args.force or bool(slug_filter)): p["slug"] for p in products}
         done = 0
         for fut in as_completed(futures):
             done += 1
             item = fut.result()
             results[item["slug"]] = item
-            if done % 25 == 0 or done == len(products):
-                print(f"  {done}/{len(products)} processed")
+            print(f"  [{done}/{len(products)}] {item['slug']} -> {item['source']} ({item['status']})")
 
-    ok = sum(1 for r in results.values() if r["status"] == "ok")
-    fallback = sum(1 for r in results.values() if r["status"] == "fallback")
-
-    for product in products:
+    all_products = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+    for product in all_products:
         slug = product["slug"]
         if slug in results:
             product["image"] = results[slug]["image"]
 
-    DATA_FILE.write_text(json.dumps(products, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    ok = sum(1 for r in results.values() if r["status"] == "ok")
+    fallback = sum(1 for r in results.values() if r["status"] == "fallback")
+
+    DATA_FILE.write_text(json.dumps(all_products, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     REPORT_FILE.write_text(json.dumps(list(results.values()), indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
-    print(f"Done. Official logos: {ok}, fallback placeholders: {fallback}, total: {len(products)}")
+    print(f"Done. Official logos: {ok}, fallback placeholders: {fallback}, processed: {len(products)}")
     print(f"Updated {DATA_FILE.name} and saved report to {REPORT_FILE.name}")
 
 
